@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <header>
-        <title>Produto {{$produto->titulo}}</title>
-    </header>
-    <body>
+@extends('layout.app')
+@section('title', $produto->titulo)
+@section('content')
         <h1>Produto {{$produto->titulo}}</h1>
         <ul>
             <li>Referência: {{$produto->referencia}}</li>
