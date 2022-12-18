@@ -20,4 +20,10 @@ Route::get('/', function () {
 
 Route::get('/contato', [ContatoController::class, 'index']);
 Route::get('/produtos', [ProdutosController::class, 'index']);
-Route::get('/produtos/{id}', [ProdutosController::class, 'show']);
+
+Route::get('/produtos/create', [ProdutosController::class, 'create'])->name('produtos.create');
+Route::post('produtos/buscar', [ProdutosController::class, 'buscar'])->name('produtos.buscar');
+Route::get('/produtos/{id}/edit', [ProdutosController::class, 'edit'])->name('produtos.edit');
+Route::put('/produtos/update/{id}', [ProdutosController::class, 'update'])->name('produtos.update');
+Route::get('/produtos/{id}', [ProdutosController::class, 'show'])->name('produtos.show');
+Route::post('/produtos/store', [ProdutosController::class, 'store'])->name('produtos.store');
