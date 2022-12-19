@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\ProdutosController;
@@ -15,9 +16,26 @@ use App\Http\Controllers\ProdutosController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+});
+Route::get('/login', function () {
+    return view('/auth/login');
+});
+Route::get('/cadastrar', function () {
+    return view('/auth/register');
 });
 
 Route::get('/contato', [ContatoController::class, 'index']);
 Route::get('/produtos', [ProdutosController::class, 'index']);
-Route::get('/produtos/{id}', [ProdutosController::class, 'show']);
+Route::post('/register', [RegisterController::class, 'create']);
+Route::get('/produtos/create', [ProdutosController::class, 'create'])->name('produtos.create');
+Route::post('produtos/buscar', [ProdutosController::class, 'buscar'])->name('produtos.buscar');
+Route::get('/produtos/{id}/edit', [ProdutosController::class, 'edit'])->name('produtos.edit');
+Route::put('/produtos/update/{id}', [ProdutosController::class, 'update'])->name('produtos.update');
+Route::get('/produtos/{id}', [ProdutosController::class, 'show'])->name('produtos.show');
+Route::post('/produtos/store', [ProdutosController::class, 'store'])->name('produtos.store');
+Route::delete('/produtos/destroy/{id}', [ProdutosController::class, 'destroy'])->name('produtos.destroy');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
