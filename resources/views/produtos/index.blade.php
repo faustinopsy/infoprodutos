@@ -18,6 +18,9 @@
   @if(Session::has('mensagem'))
     <div class="alert alert-success">{{Session::get('mensagem')}}</div>
   @endif
+  @if(Auth::check())
+  <a class="btn btn-primary" href="produtos/create">Novo</a>
+  @endif
   <div class="row">
     @foreach ($produtos as $produto)
       <div class="col-md-3">

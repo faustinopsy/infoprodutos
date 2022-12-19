@@ -59,7 +59,7 @@ class ProdutosController extends Controller{
     */
     public function create(){
       if (Auth::check()) {
-        return view('produto.create');
+        return view('produtos.create');
       }
       else{
         return redirect ('login');

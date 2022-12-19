@@ -20,10 +20,9 @@
        {{Form::textarea('descricao','',['rows'=>3,'class'=>'form-control','required','placeholder'=>'Descrição'])}}
        {{Form::label('preco','Preço')}}
        {{Form::text('preco','',['class'=>'form-control','required','placeholder'=>'Preço'])}}
-       {{Form::label('fotoproduto', 'Foto')}}
-       {{Form::file('fotoproduto',['class'=>'form-control','id'=>'fotoproduto'])}}
        {{Form::submit('Cadastrar!',['class'=>'btn btn-primary'])}}
        {{Form::close()}}
 @endsection
+<a href="javascript:history.go(-1)">Voltar</a>
     </body>
 </html>

@@ -33,3 +33,4 @@
   {{Form::submit('Alterar',['class'=>'btn btn-primary'])}}
   {{Form::close()}}
 @endsection
+<a href="javascript:history.go(-1)">Voltar</a>
