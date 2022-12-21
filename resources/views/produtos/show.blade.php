@@ -8,6 +8,6 @@
             <li>Adicionado em: {{$produto->create_at}}</li>
         </ul>
         <p> {{$produto->descricao}}</p>
-        <a href="javascript:history.go(-1)">Voltar</a>
+        <a class='btn btn-primary' href="javascript:history.go(-1)">Voltar</a>
     </body>
 </html>

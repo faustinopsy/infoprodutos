@@ -23,6 +23,6 @@
        {{Form::submit('Cadastrar!',['class'=>'btn btn-primary'])}}
        {{Form::close()}}
 @endsection
-<a href="javascript:history.go(-1)">Voltar</a>
+<a class="btn btn-primary" href="javascript:history.go(-1)">Voltar</a>
     </body>
 </html>

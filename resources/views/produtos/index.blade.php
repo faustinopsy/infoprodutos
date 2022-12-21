@@ -18,9 +18,7 @@
   @if(Session::has('mensagem'))
     <div class="alert alert-success">{{Session::get('mensagem')}}</div>
   @endif
-  @if(Auth::check())
-  <a class="btn btn-primary" href="produtos/create">Novo</a>
-  @endif
+
   <div class="row">
     @foreach ($produtos as $produto)
       <div class="col-md-3">
@@ -37,8 +35,8 @@
 
           @if(Auth::check())
             {{Form::open(['route'=>['produtos.destroy',$produto->id],'method'=>'DELETE'])}}
-            <a class='btn btn-primary' href=" {{url('produtos/'.$produto->id.'/edit')}} ">Editar</a>
-            {{Form::submit('Excluir',['class'=>'btn btn-default'])}}
+            <a class='btn btn-warning' href=" {{url('produtos/'.$produto->id.'/edit')}} ">Editar</a>
+            {{Form::submit('Excluir',['class'=>'btn btn-danger'])}}
             {{Form::close()}}
           @endif
       </div>
@@ -46,3 +44,5 @@
   </div>
   {{ $produtos->links() }}
 @endsection
+
+

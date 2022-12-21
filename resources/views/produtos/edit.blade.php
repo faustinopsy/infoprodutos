@@ -30,7 +30,7 @@
   {{Form::label('fotoproduto', 'Foto')}}
   {{Form::file('fotoproduto',['class'=>'form-control','id'=>'fotoproduto'])}}
   <br/>
-  {{Form::submit('Alterar',['class'=>'btn btn-primary'])}}
+  {{Form::submit('Alterar',['class'=>'btn btn-warning'])}}
   {{Form::close()}}
 @endsection
-<a href="javascript:history.go(-1)">Voltar</a>
+<a class='btn btn-primary' href="javascript:history.go(-1)">Voltar</a>
