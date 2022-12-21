@@ -9,5 +9,4 @@
         </ul>
         <p> {{$produto->descricao}}</p>
         <a class='btn btn-primary' href="javascript:history.go(-1)">Voltar</a>
-    </body>
-</html>
+        @endsection

@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Produto;
 use App\Models\Comentario;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Session;
 
 class ProdutosController extends Controller{
@@ -35,7 +36,7 @@ class ProdutosController extends Controller{
     * Método que busca todos os dados de produtos do banco de dados e
     * carrega a view passando os dados dos produtos como parâmetro.
     */
-    public function index(){
+    public function home(){
       $produtos = Produto::paginate(4);
       return view('produtos.index', array('produtos' => $produtos,'busca'=>null));
     }
@@ -53,7 +54,10 @@ class ProdutosController extends Controller{
       $produto = Produto::find($id);
       return view('produtos.show', array('produto' => $produto));
     }
-
+    public function index(){
+      $produtos = Produto::paginate(4);
+      return Response()->json($produtos);
+    }
     /*
     * Método que carrega a view com um formulário para criar um produto.
     */

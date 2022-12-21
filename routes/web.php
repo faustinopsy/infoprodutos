@@ -26,7 +26,7 @@ Route::get('/cadastrar', function () {
 });
 
 Route::get('/contato', [ContatoController::class, 'index']);
-Route::get('/produtos', [ProdutosController::class, 'index']);
+Route::get('/produtos', [ProdutosController::class, 'home']);
 Route::post('/register', [RegisterController::class, 'create']);
 Route::get('/produtos/create', [ProdutosController::class, 'create'])->name('produtos.create');
 Route::post('produtos/buscar', [ProdutosController::class, 'buscar'])->name('produtos.buscar');
@@ -36,6 +36,11 @@ Route::get('/produtos/{id}', [ProdutosController::class, 'show'])->name('produto
 Route::post('/produtos/store', [ProdutosController::class, 'store'])->name('produtos.store');
 Route::delete('/produtos/destroy/{id}', [ProdutosController::class, 'destroy'])->name('produtos.destroy');
 
+
+
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
+Route::group(array('prefix'=>'api'),function(){
+    Route::resource('produtos', ProdutosController::class);
+});

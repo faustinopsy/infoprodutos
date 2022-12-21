@@ -4,12 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title')</title>
+        {{Html::style('css/bootstrap.min.css')}}
         {{Html::style('css/bootstrap.css')}}
         {{Html::style('css/bootstrap-utilities.min.css')}}
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
+        {{Html::style('css/bootstrap-utilities.min.css')}}
 
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <!-- Script -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' type='text/javascript'></script>
         
@@ -19,21 +18,7 @@
         
         <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
         
-        <style>
-            .footer {
-                position: fixed;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                background-color: #9C27B0;
-                color: white;
-                text-align: center;
-            }
-            body {
-                background-color: #EDF7EF
-            }
         
-        </style>
     </header>
     <body>
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">

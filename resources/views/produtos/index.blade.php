@@ -47,7 +47,7 @@
   {{ $produtos->links() }}
 @endsection
 
-
+@if(Auth::check())
  <!-- small modal -->
  <div class="modal fade" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModalLabel"
  aria-hidden="true">
@@ -94,3 +94,4 @@
      </div>
  </div>
 </div>
+@endif
